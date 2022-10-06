@@ -9,10 +9,12 @@
 docker 환경 : cuda : 11.6.1 / cudnn : 8.0 / ubuntu : 20.04
 * [Docker](https://docs.docker.com/engine/install/ubuntu/)
 * [Docker-compose](https://docs.docker.com/compose/install/)
+* [Nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
 
-해당 패키지 설치 후 docker.compose.yml 파일에서 볼륨 및 포트 변경
+1. 해당 패키지 설치 후 docker.compose.yml 파일에서 볼륨 및 포트 변경
 
 ```python
+# : 기준으로 앞쪽이 자신의 로컬 directory, 뒤쪽이 생성되는 mount directory
     volumes:
       - "/media/mmlab/hdd:/hdd"  # 원하는 디렉토리로 수정
       
@@ -24,3 +26,12 @@ docker 환경 : cuda : 11.6.1 / cudnn : 8.0 / ubuntu : 20.04
       - "25103:8888"             # jupyter port
       
 ```
+
+2. docker container 생성
+
+```python
+
+
+```
+
+3. 

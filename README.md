@@ -30,8 +30,21 @@ docker 환경 : cuda : 11.6.1 / cudnn : 8.0 / ubuntu : 20.04
 2. docker container 생성
 
 ```python
-
-
+docker-compose up -d
 ```
 
-3. 
+환경 변경 후 container 재적용 실행 command(단 이전의 작업이 날아갈 수 있음)
+```python
+docker-compose up -d --build
+```
+
+ssh port 접근 이외에 docker container 다중 접속
+```python
+docker exec -it [CONTAINER_NAME] bash
+```
+
+3. docker container 접속
+
+```python
+docker attach [CONTAINER_NAME]
+```

@@ -1,25 +1,15 @@
 # Book cover BenchMark
 
-현 문서는 book cover classification과 text-recognition을 통한 text data 생성 및 multi modal 성능 평가를 진행하기 위한 benchmark dataset이다.
+## Introduce
+본 문서는 book cover classification과 text-recognition을 통한 text data 생성 및 multi modal 성능 평가를 진행하기 위한 benchmark dataset이다.
 
-1. wandb api key 등록 및 확인
-```shell
-export WANDB_API_KEY=YOUR_API_KEY
-echo $WANDB_API_KEY
-```
+## Installation
+환경 설정은 docker를 통해 구현하였으며 환경 설정을 하기 위해서는 아래와 같은 패키지 설치가 필요하다.
+docker 환경 : cuda : 11.6.1 / cudnn : 8.0 / ubuntu : 20.04
+* [Docker](https://docs.docker.com/engine/install/ubuntu/)
+* [Docker-compose](https://docs.docker.com/compose/install/)
 
-2. wandb sweep을 이용한 하이퍼 파라미터 자동 탐색 (AutoML)
-```shell
-wandb sweep sweep.yaml
-wandb agent <USERNAME/PROJECTNAME/SWEEPID>
-```
 
-3. 학습
-```shell
-python train.py
-```
+```python
 
-4. 인퍼런스
-```shell
-python inference.py
 ```

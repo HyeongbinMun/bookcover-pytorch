@@ -1,4 +1,4 @@
-# Book cover BenchMark
+# Book cover Classifiaction
 
 1. wandb api key 등록 및 확인
 ```shell

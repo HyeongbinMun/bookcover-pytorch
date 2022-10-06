@@ -1,0 +1,14 @@
+nc: 33
+
+train: './dataset/bookcover/train/'
+val: './dataset/bookcover/val/'
+test: './dataset/bookcover/test/'
+
+names: ["Art-Photography", "Biography", "Business-Finance-Law", "Childrens-Books", "Computing", "Crafts-Hobbies", "Crime-Thriller", "Dictionaries-Languages", "Entertainment",
+             "Food-Drink", "Graphic-Novels-Anime-Manga", "Health", "History-Archaeology", "Home-Garden", "Humour", "Medical", "Mind-Body-Spirit", "Natural-History", "Personal-Development",
+             "Poetry-Drama", "Reference", "Religion", "Romance", "Science-Fiction-Fantasy-Horror", "Science-Geography", "Society-Social-Sciences", "Sport", "Stationery", "Teaching-Resources-Education",
+             "Technology-Engineering", "Teen-Young-Adult", "Transport", "Travel-Holiday-Guides"]
+kor_class: ["예술사진", "전기", "비즈니스,금융,법률", "아동도서", "컴퓨팅", "공예,취미", "범죄,스릴러", "사전,언어",
+            "오락", "음식,음료", "그래픽노블,애니,만화", "건강", "역사,고고학", "집과마당", "기분", "의료", "심신,명상", "자연사",
+            "개인,개발", "시극", "참조", "종교", "로맨스", "SF판타지,호러", "과학,지리", "사회과학", "운동", "문방구",
+            "교수,자원,교육", "기술공학", "십대,청소년,성인", "수송", "여행,휴가,가이드"]

@@ -1,0 +1,24 @@
+version: '2.3'
+
+services:
+  main:
+    container_name: book-cover
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    runtime: nvidia
+    restart: always
+    env_file:
+      - "docker-compose-env/main.env"
+    volumes:
+      - "/media/mmlab/hdd:/hdd"
+    expose:
+      - "8000"
+    ports:
+      - "25100:22"
+      - "25101:6006"
+      - "25102:8000"
+      - "25103:8888"
+    ipc: host
+    stdin_open: true
+    tty: true

@@ -27,7 +27,7 @@ docker 환경 : cuda : 11.6.1 / cudnn : 8.0 / ubuntu : 20.04
       
 ```
 
-2. docker container 생성
+2. docker container 생성 및 접속
 
 ```python
 docker-compose up -d
@@ -43,8 +43,7 @@ ssh port 접근 이외에 docker container 다중 접속
 docker exec -it [CONTAINER_NAME] bash
 ```
 
-3. docker container 접속
-
+docker container 접속
 ```python
 docker attach [CONTAINER_NAME]
 ```

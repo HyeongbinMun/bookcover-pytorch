@@ -19,7 +19,8 @@ wandb agent <USERNAME/PROJECTNAME/SWEEPID>
 
 4. train
 ```shell
-python train.py
+python train.py \
+
 ```
 
 5. inference

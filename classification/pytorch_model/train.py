@@ -117,21 +117,21 @@ def valid(args, model, val_loader, criterion, epoch, wandb):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('-dd', '--data_dir', type=str, default='/hdd/sy/food-kt')
-    parser.add_argument('-sd', '--save_dir', type=str, default='/hdd/sy/weights/food-kt')
+    parser.add_argument('-dd', '--data_dir', type=str, default='/hdd/re-book-covers/')
+    parser.add_argument('-sd', '--save_dir', type=str, default='/hdd/model/book')
     parser.add_argument('-m', '--model', type=str, default='tf_efficientnet_b4')
-    parser.add_argument('-is', '--img_size', type=int, default=384)
+    parser.add_argument('-is', '--img_size', type=int, default=224)
     parser.add_argument('-se', '--seed', type=int, default=42)
     parser.add_argument('-av', '--aug_ver', type=int, default=9)
 
-    parser.add_argument('-e', '--epochs', type=int, default=50)
+    parser.add_argument('-e', '--epochs', type=int, default=200)
     parser.add_argument('-we', '--warm_epoch', type=int, default=5)
     parser.add_argument('-bs', '--batch_size', type=int, default=32)
-    parser.add_argument('-nw', '--num_workers', type=int, default=8)
+    parser.add_argument('-nw', '--num_workers', type=int, default=4)
 
     parser.add_argument('-l', '--loss', type=str, default='smoothing_ce', choices=['ce', 'focal', 'smoothing_ce'])
     parser.add_argument('-ls', '--label_smoothing', type=float, default=0.5)
-    parser.add_argument('-ot', '--optimizer', type=str, default='adamw',
+    parser.add_argument('-ot', '--optimizer', type=str, default='adam',
                         choices=['adam', 'radam', 'adamw', 'adamp', 'ranger', 'lamb', 'adabound'])
     parser.add_argument('-lr', '--learning_rate', type=float, default=3e-3)
 
@@ -171,13 +171,13 @@ if __name__ == '__main__':
     label_encoder = {key: idx for idx, key in enumerate(label_description)}
     label_decoder = {val: key for key, val in label_encoder.items()}
 
-    train_data = sorted(glob(f'{os.path.join(args.data_dir, "train")}/*/*.jpg'))  # len(train_data): 10,000
-    train_label = [data.split('/')[-2] for data in train_data]  # '가자미전'
-    train_labels = [label_encoder[k] for k in train_label]      # 0
+    train_data = sorted(glob(f'{os.path.join(args.data_dir, "train")}/*/*.jpg'))
+    train_label = [data.split('/')[-2] for data in train_data]
+    train_labels = [label_encoder[k] for k in train_label]
 
-    val_data = sorted(glob(f'{os.path.join(args.data_dir, "val")}/*/*.jpg'))  # len(train_data): 10,000
-    val_label = [data.split('/')[-2] for data in val_data]  # '가자미전'
-    val_labels = [label_encoder[k] for k in val_label]      # 0
+    val_data = sorted(glob(f'{os.path.join(args.data_dir, "val")}/*/*.jpg'))
+    val_label = [data.split('/')[-2] for data in val_data]
+    val_labels = [label_encoder[k] for k in val_label]
     #####################
 
     c_date, c_time = datetime.now().strftime("%m%d/%H%M%S").split('/')
@@ -189,13 +189,13 @@ if __name__ == '__main__':
     if args.wandb:
         wandb_api_key = os.environ.get('WANDB_API_KEY')
         wandb.login(key=wandb_api_key)
-        run = wandb.init(project='food-kt', name=f'{args.model}_{c_date}_{c_time}')
+        run = wandb.init(project='book-cover', name=f'{args.model}_{c_date}_{c_time}')
         wandb.config.update(args)
     ###################
 
     #### LOAD DATASET ####
-    train_dataset = FoodKT(args, train_data, train_labels, mode='train')
-    val_dataset = FoodKT(args, val_data, val_labels, mode='valid')
+    train_dataset = BookCover(args, train_data, train_labels, mode='train')
+    val_dataset = BookCover(args, val_data, val_labels, mode='valid')
 
     train_loader = DataLoader(train_dataset, batch_size=args.batch_size, num_workers=args.num_workers, shuffle=True)
     val_loader = DataLoader(val_dataset, batch_size=args.batch_size, num_workers=args.num_workers, shuffle=False)

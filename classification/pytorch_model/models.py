@@ -11,7 +11,7 @@ class ImageModel(nn.Module):
         self.model_name = model_name.lower()
         self.class_n = class_n
         self.mode = mode
-        self.encoder = timm.create_model(self.model_name, pretrained=False)
+        self.encoder = timm.create_model(self.model_name, pretrained=True)
 
         names = []
         modules = []

@@ -1,3 +1,0 @@
-conda activate PaddleOCR
-cd /home/ysjo/PaddleOCR
-CUDA_VISIBLE_DEVICES=1 python Easy_OCR.py

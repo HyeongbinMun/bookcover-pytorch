@@ -120,20 +120,20 @@ if __name__ == '__main__':
     parser.add_argument('-dd', '--data_dir', type=str, default='/hdd/book-covers-split/')
     parser.add_argument('-sd', '--save_dir', type=str, default='/hdd/model/book')
     parser.add_argument('-m', '--model', type=str, default='tf_efficientnet_b4')
-    parser.add_argument('-is', '--img_size', type=int, default=224)
+    parser.add_argument('-is', '--img_size', type=int, default=200)
     parser.add_argument('-se', '--seed', type=int, default=42)
     parser.add_argument('-av', '--aug_ver', type=int, default=9)
 
     parser.add_argument('-e', '--epochs', type=int, default=200)
     parser.add_argument('-we', '--warm_epoch', type=int, default=5)
-    parser.add_argument('-bs', '--batch_size', type=int, default=32)
+    parser.add_argument('-bs', '--batch_size', type=int, default=164)
     parser.add_argument('-nw', '--num_workers', type=int, default=4)
 
     parser.add_argument('-l', '--loss', type=str, default='ce', choices=['ce', 'focal', 'smoothing_ce'])
     parser.add_argument('-ls', '--label_smoothing', type=float, default=0.5)
     parser.add_argument('-ot', '--optimizer', type=str, default='adam',
                         choices=['adam', 'radam', 'adamw', 'adamp', 'ranger', 'lamb', 'adabound'])
-    parser.add_argument('-lr', '--learning_rate', type=float, default=5e-2)
+    parser.add_argument('-lr', '--learning_rate', type=float, default=1e-4)
 
     parser.add_argument('-sc', '--scheduler', type=str, default='cos_base', choices=['cos_base', 'cos', 'cycle'])
     parser.add_argument('-mxlr', '--max_lr', type=float, default=3e-3)  # scheduler - cycle
@@ -148,7 +148,7 @@ if __name__ == '__main__':
     parser.add_argument('-vr', '--val_ratio', type=float, default=0.2)
 
     # cut mix
-    parser.add_argument('-cm', '--cutmix', type=bool, default=True)
+    parser.add_argument('-cm', '--cutmix', type=bool, default=False)
     parser.add_argument('-mp', '--mix_prob', type=float, default=0.5)
     parser.add_argument('-cms', '--cutmix_stop', type=int, default=51)
 

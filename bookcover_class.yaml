@@ -1,0 +1,36 @@
+nc: 30
+
+train: /data/images/train
+val: /data/images/val
+test: /data/images/test
+
+class: ["Arts-Photography", 
+"Biographies-Memoirs", 
+"Business", 
+"Calendars", 
+"Children", 
+"Comics-Graphic", 
+"Computers-Technology", 
+"Cookbooks", 
+"Hobbies-Home",
+"Christian-Bibles", 
+"Engineering-Transportation	", 
+"Health", 
+"History", 
+"Humor-Entertainment", 
+"Law", 
+"Literature-Fiction", 
+"Medical", 
+"Mystery-Thriller", 
+"Parenting-Relationships",
+"Politics-Social Sciences", 
+"Reference", 
+"Religion-Spirituality", 
+"Romance", 
+"Science-Math", 
+"Science-Fiction", 
+"Self-Help", 
+"Sport", 
+"Young-Adult", 
+"Test_Preparation",
+"Travel"]

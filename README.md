@@ -43,3 +43,6 @@ ssh port 접근 이외에 docker container 다중 접속
 ```python
 docker exec -it [CONTAINER_NAME] bash
 ```
+
+3. dataset download
+https://drive.google.com/file/d/1sJDyDjVKNTKVSHnrFvJZM2DmFYkTnv0G/view?usp=share_link

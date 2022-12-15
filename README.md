@@ -45,4 +45,4 @@ docker exec -it [CONTAINER_NAME] bash
 ```
 
 3. dataset download
-https://drive.google.com/file/d/1sJDyDjVKNTKVSHnrFvJZM2DmFYkTnv0G/view?usp=share_link
+ - https://drive.google.com/file/d/1sJDyDjVKNTKVSHnrFvJZM2DmFYkTnv0G/view?usp=share_link
